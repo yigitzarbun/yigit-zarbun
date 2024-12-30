@@ -1,0 +1,168 @@
+@import "../../styles/globals.scss";
+@import "../../styles/media.scss";
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include small-screen {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10vh;
+  }
+  @include medium-screen {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10vh;
+  }
+  @include large-mobile-screen {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include small-desktop {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .title-container {
+    display: flex;
+    align-items: center;
+    column-gap: 2vw;
+    h4 {
+      font-size: $heading-size;
+      color: $heading-color;
+      @include small-screen {
+        font-size: 1.5rem;
+      }
+      @include medium-screen {
+        font-size: 1.5rem;
+      }
+    }
+    .line {
+      height: 0.1px;
+      width: 20vw;
+      background: $primary-color;
+    }
+  }
+
+  .experiences-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      padding: 1rem;
+      cursor: pointer;
+
+      p {
+        padding: 0;
+        margin: 0;
+        color: $heading-color;
+      }
+
+      .texts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .grid1-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid1-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+
+        .grid2-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid2-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+
+        .grid3-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid3-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+
+        .grid4-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid4-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+
+        .grid5-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid5-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+
+        .grid6-active {
+          margin-left: auto;
+          font-size: 2rem;
+        }
+
+        .grid6-hidden {
+          display: none;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .experience:hover {
+      cursor: pointer;
+      transform: translate(-5px, -5px);
+      box-shadow: 5px 5px 0 $primary-color;
+    }
+    .experience-open {
+      display: flex;
+      flex-direction: column;
+      background-color: $secondary-color;
+      border-radius: 5px;
+      padding: 1rem;
+      .experience-top {
+        display: flex;
+        align-items: center;
+        column-gap: 1vw;
+      }
+      .skills {
+        display: flex;
+        column-gap: 2vw;
+        @include small-screen {
+          flex-wrap: wrap;
+        }
+      }
+      .skill {
+        color: $accent-color;
+      }
+    }
+
+    .experience-hidden {
+      display: none;
+    }
+  }
+}

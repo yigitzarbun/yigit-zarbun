@@ -1,0 +1,81 @@
+@import "../../styles/globals.scss";
+@import "../../styles/media.scss";
+
+.hero-container {
+  padding: 0 2rem;
+  width: 70%;
+  margin: 0 auto;
+  @include small-screen {
+    width: 90%;
+  }
+  @include medium-screen {
+    width: 90%;
+  }
+  @include large-mobile-screen {
+    width: 90%;
+  }
+  @include tablet-screen {
+  }
+  @include small-desktop {
+  }
+  @include medium-desktop {
+  }
+  @include large-desktop {
+  }
+  p {
+    color: $primary-color;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 3rem;
+    color: $heading-color;
+    margin: 0;
+    @include small-screen {
+      font-size: 2rem;
+    }
+    @include medium-screen {
+      font-size: 2rem;
+    }
+  }
+  h2 {
+    font-size: 3rem;
+    color: rgb(197, 196, 196);
+    margin: 0;
+    opacity: 0.8;
+    @include small-screen {
+      font-size: 2rem;
+    }
+    @include medium-screen {
+      font-size: 2rem;
+    }
+  }
+  h3 {
+    width: 60%;
+    font-weight: normal;
+    margin-bottom: 5rem;
+    @include small-screen {
+      width: 100%;
+    }
+    @include medium-screen {
+      width: 100%;
+    }
+    @include large-mobile-screen {
+      width: 90%;
+    }
+  }
+
+  button {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    color: $primary-color;
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 $primary-color;
+  }
+}

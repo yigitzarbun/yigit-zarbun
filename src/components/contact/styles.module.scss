@@ -1,0 +1,75 @@
+@import "../../styles/globals.scss";
+@import "../../styles/media.scss";
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 20vh auto 0 auto;
+  height: 100vh;
+  row-gap: 5vh;
+  padding: 0 2rem;
+  @include small-screen {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 15vh;
+  }
+  @include medium-screen {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 15vh;
+  }
+  @include large-mobile-screen {
+    width: 70%;
+    margin: 0 auto;
+  }
+  @include small-desktop {
+    width: 60%;
+    margin: 0 auto;
+  }
+  h4 {
+    text-align: center;
+    font-size: $heading-size;
+    margin: 0;
+    color: $heading-color;
+  }
+
+  p {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: $text-color;
+  }
+
+  a {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    color: $primary-color;
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline;
+    width: 10vw;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    @include small-screen {
+      width: 40vw;
+    }
+    @include medium-screen {
+      width: 40vw;
+    }
+    @include large-mobile-screen {
+      width: 30vw;
+    }
+    @include small-desktop {
+      width: 20vw;
+    }
+  }
+  a:hover {
+    cursor: pointer;
+    transform: translate(-5px, -5px); /* Move button to upper left */
+    box-shadow: 5px 5px 0 $primary-color;
+  }
+}

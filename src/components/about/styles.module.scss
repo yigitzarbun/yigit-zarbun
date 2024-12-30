@@ -1,0 +1,149 @@
+@import "../../styles/globals.scss";
+@import "../../styles/media.scss";
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  @include small-screen {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include medium-screen {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include large-mobile-screen {
+    width: 90%;
+  }
+  @include tablet-screen {
+  }
+  @include small-desktop {
+    width: 80%;
+  }
+  @include medium-desktop {
+  }
+  @include large-desktop {
+  }
+
+  .title-container {
+    display: flex;
+    align-items: center;
+    column-gap: 2vw;
+
+    h4 {
+      font-size: $heading-size;
+      color: $heading-color;
+      @include small-screen {
+        font-size: 1.5rem;
+      }
+      @include medium-screen {
+        font-size: 1.5rem;
+      }
+    }
+
+    .line {
+      height: 0.1px;
+      width: 30vw;
+      background: $primary-color;
+      @include small-screen {
+        width: 20vw;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    @include small-screen {
+      flex-direction: column;
+      row-gap: 2vh;
+    }
+    @include medium-screen {
+      flex-direction: column;
+      row-gap: 2vh;
+    }
+    @include large-mobile-screen {
+      flex-direction: column;
+      row-gap: 10vh;
+    }
+    @include tablet-screen {
+      column-gap: 2vw;
+    }
+    @include small-desktop {
+      column-gap: 2vw;
+    }
+    .texts {
+      width: 55%;
+      @include small-screen {
+        width: 100%;
+        margin: 0 auto;
+      }
+      @include medium-screen {
+        width: 100%;
+        margin: 0 auto;
+      }
+      @include large-mobile-screen {
+        width: 100%;
+      }
+      p {
+        color: $text-color;
+      }
+
+      .lists {
+        margin-top: 1.5vh;
+        display: flex;
+        column-gap: 4vw;
+
+        ul {
+          padding-left: 0;
+          margin: 0;
+          line-height: 4vh;
+          list-style-type: none;
+
+          text-align: left;
+
+          li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 1vh;
+
+            &::before {
+              content: "\2022";
+              position: absolute;
+              left: 0;
+              top: 0;
+              color: $primary-color;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      width: 40%;
+      height: 40vh;
+      object-fit: contain;
+      border-radius: 15px;
+      @include small-screen {
+        width: 80%;
+        margin: 0 auto;
+      }
+      @include medium-screen {
+        width: 80%;
+        margin: 0 auto;
+      }
+      @include large-mobile-screen {
+        width: 60%;
+        margin: 0 auto;
+      }
+      @include small-desktop {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

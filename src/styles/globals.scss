@@ -1,0 +1,39 @@
+// Color Palette
+//$primary-color: #6eacda;
+//$secondary-color: #17213f;
+$accent-color: #b5b5b5;
+//$background-color: #021526;
+//$text-color: #93b1a6;
+$heading-color: rgb(183, 193, 203);
+$text-hover-color: #6eacda;
+$background-color: #040d12;
+$primary-color: #64a28a;
+$secondary-color: #1e4b4b;
+$text-color: #9ba8a3;
+$secondary-color: #031a1a;
+
+// Typography
+$font-family: "Montserrat", sans-serif;
+$heading-font-family: "Helvetica", sans-serif;
+
+// Spacing
+$base-spacing-unit: 16px;
+$small-spacing: $base-spacing-unit / 2;
+$large-spacing: $base-spacing-unit * 2;
+
+// Border Radius
+$border-radius: 15px;
+
+// Shadows
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Other styles
+$transition-speed: 0.3s;
+
+// Font size
+$heading-size: 2rem;
+
+body {
+  padding-top: 20vh;
+  background-color: $background-color;
+}
