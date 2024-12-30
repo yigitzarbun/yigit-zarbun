@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./styles.module.scss";
 import Header from "../../components/header/Header";
 import Hero from "../../components/hero/Hero";
@@ -8,10 +8,6 @@ import Contact from "../../components/contact/Contact";
 import About from "../../components/about/About";
 
 const Main = () => {
-  const [isHidden, setIsHidden] = useState(false);
-
-  let lastScrollTop = 0;
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleOpenMenu = () => {
@@ -22,39 +18,14 @@ const Main = () => {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll =
-        window.scrollY || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScrollTop) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const handleScrollTo = (targetId: string) => {
     const element = document.getElementById(targetId);
     if (element) {
-      const headerHeight =
-        document.querySelector(`.${styles["header-container"]}`)
-          ?.clientHeight || 0;
-
       window.scrollTo({
-        top: element.offsetTop - headerHeight, // Add the header height as an offset
+        top: element.offsetTop,
         behavior: "smooth",
       });
-      handleCloseMenu(); // Close the menu after navigation (for mobile)
+      handleCloseMenu();
     }
   };
   return (

@@ -1,8 +1,8 @@
 import { RiMenu3Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import MenuModal from "./menu-modal/MenuModal";
-import { useEffect } from "react";
 
 interface HeaderProps {
   handleScrollTo: (id: string) => void;
@@ -14,26 +14,38 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const { handleScrollTo, handleOpenMenu, handleCloseMenu, menuOpen } = props;
 
+  const [isHidden, setIsHidden] = useState(false);
+  let lastScrollTop = 0;
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        if (menuOpen) {
-          handleCloseMenu();
-        }
+    const handleScroll = () => {
+      const currentScroll =
+        window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        setIsHidden(true);
+      } else {
+        // Scrolling up
+        setIsHidden(false);
       }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     };
 
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [menuOpen, handleCloseMenu]);
+  }, []);
 
   return (
-    <div className={styles["header-container"]}>
+    <div
+      className={`${styles["header-container"]} ${
+        isHidden ? styles["header-hidden"] : ""
+      }`}
+    >
       <div className={styles["logo-container"]}>
         <h1>YZ</h1>
       </div>
