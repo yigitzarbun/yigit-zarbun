@@ -1,4 +1,6 @@
 import { RiMenu3Line } from "react-icons/ri";
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
@@ -23,10 +25,8 @@ const Header = (props: HeaderProps) => {
         window.scrollY || document.documentElement.scrollTop;
 
       if (currentScroll > lastScrollTop) {
-        // Scrolling down
         setIsHidden(true);
       } else {
-        // Scrolling up
         setIsHidden(false);
       }
 
@@ -47,7 +47,7 @@ const Header = (props: HeaderProps) => {
       }`}
     >
       <div className={styles["logo-container"]}>
-        <h1>YZ</h1>
+        <h1 onClick={() => handleScrollTo("hero")}>YZ</h1>
       </div>
       <nav>
         <NavLink
@@ -78,7 +78,27 @@ const Header = (props: HeaderProps) => {
         >
           Contact
         </NavLink>
-        <button className={styles.resume}>Resume</button>
+        <a
+          href="https://github.com/yigitzarbun?tab=repositories"
+          target="blank"
+          className={styles.icon}
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yigit-zarbun-732924107/"
+          target="blank"
+          className={styles.icon}
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="/files/Yigit_Zarbun_2025_CV.pdf"
+          target="_blank"
+          className={styles.resume}
+        >
+          Resume
+        </a>
       </nav>
       <RiMenu3Line className={styles["menu-icon"]} onClick={handleOpenMenu} />
       {menuOpen && (

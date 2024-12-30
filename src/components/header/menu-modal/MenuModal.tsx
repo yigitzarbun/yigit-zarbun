@@ -1,7 +1,9 @@
+import { IoCloseSharp } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 import Modal from "react-modal";
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.scss";
-import { IoCloseSharp } from "react-icons/io5";
 
 interface MenuModalProps {
   menuOpen: boolean;
@@ -49,6 +51,20 @@ const MenuModal = (props: MenuModalProps) => {
         >
           Contact
         </NavLink>
+        <a
+          href="https://github.com/yigitzarbun?tab=repositories"
+          target="blank"
+          className={styles.icon}
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yigit-zarbun-732924107/"
+          target="blank"
+          className={styles.icon}
+        >
+          <FaLinkedin />
+        </a>
         <button className={styles.resume}>Resume</button>
       </nav>
     </Modal>

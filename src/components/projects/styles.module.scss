@@ -265,6 +265,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
       @include small-screen {
         width: 90%;
       }
@@ -311,9 +312,39 @@
         }
       }
     }
-
     .project:hover {
       transform: translateY(-5px);
     }
+  }
+  .view-more-button {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    color: $primary-color;
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline;
+    width: 10vw;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    @include small-screen {
+      width: 40vw;
+    }
+    @include medium-screen {
+      width: 40vw;
+    }
+    @include large-mobile-screen {
+      width: 30vw;
+    }
+    @include small-desktop {
+      width: 20vw;
+    }
+  }
+  .view-more-button:hover {
+    cursor: pointer;
+    transform: translate(-5px, -5px); /* Move button to upper left */
+    box-shadow: 5px 5px 0 $primary-color;
   }
 }

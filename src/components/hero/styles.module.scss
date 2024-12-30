@@ -2,14 +2,16 @@
 @import "../../styles/media.scss";
 
 .hero-container {
-  padding: 0 2rem;
+  padding: 2rem 2rem;
   width: 70%;
   margin: 0 auto;
   @include small-screen {
     width: 90%;
+    padding-top: 4rem;
   }
   @include medium-screen {
     width: 90%;
+    padding-top: 4rem;
   }
   @include large-mobile-screen {
     width: 90%;

@@ -15,7 +15,6 @@
   background-color: $background-color;
   opacity: 0.95;
 
-  // Media Queries
   @include small-screen {
     height: 5vh;
   }
@@ -24,7 +23,6 @@
     height: 5vh;
   }
 
-  // Header hiding effect
   &.header-hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -47,7 +45,6 @@
     align-items: center;
     font-weight: normal;
 
-    // Responsive behavior for smaller screens
     @include small-screen {
       display: none;
     }
@@ -77,6 +74,15 @@
       color: $primary-color;
     }
 
+    .icon {
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: $text-color;
+    }
+    .icon:hover {
+      color: $primary-color;
+    }
     .resume {
       border: 1px solid $primary-color;
       padding: 0.7rem;
@@ -85,6 +91,7 @@
       background-color: inherit;
       font-weight: bolder;
       font-size: 1.01rem;
+      text-decoration: none;
     }
 
     .resume:hover {
@@ -97,7 +104,6 @@
   .menu-icon {
     display: none;
 
-    // Small and medium screens where the menu icon is displayed
     @include small-screen {
       display: block;
       font-size: 1.5rem;

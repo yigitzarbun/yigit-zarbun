@@ -103,6 +103,13 @@ const Projects = () => {
           </div>
         </a>
       </div>
+      <a
+        href="https://github.com/yigitzarbun?tab=repositories"
+        target="blank"
+        className={styles["view-more-button"]}
+      >
+        View More
+      </a>
     </div>
   );
 };

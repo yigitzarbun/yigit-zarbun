@@ -80,7 +80,15 @@ nav {
 .active-nav-link {
   color: $primary-color;
 }
-
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: $text-color;
+}
+.icon:hover {
+  color: $primary-color;
+}
 .resume {
   border: 1px solid $primary-color;
   border-radius: 5px;
